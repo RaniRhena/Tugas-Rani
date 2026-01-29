@@ -12,104 +12,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Rani Riyani</title>
+    <title>CV Rani Riyani - Purple Theme</title>
     <style>
         :root {
-            --primary-color: #4a90e2;
-            --secondary-color: #f5f7fa;
-            --text-color: #333;
-            --accent-color: #ff6b6b;
+            --primary-purple: #6c5ce7;
+            --dark-purple: #4834d4;
+            --light-purple: #f3f0ff;
+            --text-color: #2d3436;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            background-color: var(--primary-purple); /* Latar belakang ungu */
             margin: 0;
-            padding: 0;
-            background-color: var(--secondary-color);
-            color: var(--text-color);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            background: #fff;
+        .cv-card {
+            max-width: 850px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             padding: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-radius: 8px;
+        }
+
+        /* Bagian Foto Profil */
+        .profile-upload {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-purple);
+            background-color: var(--light-purple);
+            cursor: pointer;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .upload-label {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.8em;
+            color: var(--primary-purple);
+            cursor: pointer;
+            font-weight: bold;
         }
 
         header {
             text-align: center;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 20px;
             margin-bottom: 30px;
         }
 
         h1 {
+            color: var(--dark-purple);
             margin: 0;
-            color: var(--primary-color);
             text-transform: uppercase;
-            letter-spacing: 2px;
         }
 
         .contact-info {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
             gap: 15px;
+            flex-wrap: wrap;
             margin-top: 10px;
-            font-size: 0.9em;
-        }
-
-        section {
-            margin-bottom: 25px;
+            color: #636e72;
         }
 
         h2 {
-            color: var(--primary-color);
-            border-left: 5px solid var(--accent-color);
-            padding-left: 10px;
-            font-size: 1.2em;
-            margin-bottom: 15px;
+            border-bottom: 2px solid var(--light-purple);
+            color: var(--primary-purple);
+            padding-bottom: 5px;
+            margin-top: 25px;
         }
 
         .grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 25px;
         }
 
-        ul {
-            padding-left: 20px;
-        }
-
-        .skill-tag {
+        .skill-badge {
             display: inline-block;
-            background: #e1ecf4;
-            color: #39739d;
-            padding: 5px 12px;
-            border-radius: 15px;
-            margin: 5px 2px;
-            font-size: 0.85em;
+            background: var(--light-purple);
+            color: var(--dark-purple);
+            padding: 5px 15px;
+            border-radius: 20px;
+            margin: 3px;
+            font-size: 0.9em;
+            font-weight: 500;
         }
 
-        .footer {
-            text-align: center;
-            font-size: 0.8em;
-            color: #888;
-            margin-top: 40px;
-        }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 5px; }
 
         @media (max-width: 600px) {
             .grid { grid-template-columns: 1fr; }
-            .container { margin: 10px; padding: 20px; }
+            .cv-card { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="cv-card">
+    <div class="profile-upload">
+        <label for="file-input">
+            <img id="profile-img" src="https://via.placeholder.com/150?text=Klik+Foto" alt="Foto Rani">
+        </label>
+        <input id="file-input" type="file" accept="image/*" onchange="previewImage(event)">
+        <span class="upload-label">Klik gambar untuk ganti foto profil</span>
+    </div>
+
     <header>
         <h1>Rani Riyani</h1>
         <div class="contact-info">
@@ -121,7 +143,7 @@
 
     <section>
         <h2>Tentang Saya</h2>
-        <p>Saya adalah pribadi yang disiplin dan bertanggung jawab. Saya orangnya ekstrovert dan ceria, saya sangat menikmati interaksi sosial dan mudah beradaptasi dengan lingkungan baru. Saya memiliki minat besar dalam dunia seni suara dan kuliner.</p>
+        <p>Saya adalah pribadi yang disiplin dan bertanggung jawab. Saya ceria/ekstrovert tergantung orang menyikapi saya. Saya sangat menyukai musik, menyanyi, dan memasak.</p>
     </section>
 
     <div class="grid">
@@ -135,47 +157,55 @@
         </section>
 
         <section>
-            <h2>Keahlian & Bahasa</h2>
-            <div>
-                <span class="skill-tag">Memasak</span>
-                <span class="skill-tag">Bernyanyi</span>
-                <span class="skill-tag">Mengaji</span>
-                <span class="skill-tag">Badminton</span>
-            </div>
-            <p style="margin-top:10px;"><strong>Bahasa:</strong> Indonesia, Sunda</p>
+            <h2>Keahlian</h2>
+            <div class="skill-badge">Memasak</div>
+            <div class="skill-badge">Bernyanyi</div>
+            <div class="skill-badge">Mengaji</div>
+            <div class="skill-badge">Bahasa Sunda</div>
+            <div class="skill-badge">Bahasa Indonesia</div>
         </section>
     </div>
 
     <section>
-        <h2>Pengalaman & Organisasi</h2>
-        <ul>
-            <li><strong>Rohis</strong> - SMA KP Baleendah</li>
-            <li><strong>Eskul Badminton</strong> - Masa Sekolah</li>
-        </ul>
+        <h2>Pengalaman & Sertifikat</h2>
+        <div class="grid">
+            <div>
+                <strong>Organisasi/Eskul:</strong>
+                <ul>
+                    <li>Eskul Badminton (SD/SMP)</li>
+                    <li>Eskul Rohis (SMA KP Baleendah)</li>
+                </ul>
+            </div>
+            <div>
+                <strong>Sertifikat:</strong>
+                <ul>
+                    <li>MTQ antar Madrasah</li>
+                    <li>Wisuda Tahfidz</li>
+                    <li>Pesantren Kilat</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
     <section>
-        <h2>Sertifikat & Penghargaan</h2>
-        <ul>
-            <li>Sertifikat MTQ antar Madrasah</li>
-            <li>Sertifikat Wisuda Tahfidz</li>
-            <li>Sertifikat Pesantren Kilat (Sekolah & Madrasah)</li>
-        </ul>
+        <h2>Info Pribadi</h2>
+        <p><strong>Lahir:</strong> 8 Oktober 2008</p>
+        <p><strong>Alamat:</strong> Kp Nusa RT 04 RW 14 Kel.Rancamanyar Kec.Baleendah Kab. Bandung</p>
     </section>
-
-    <section>
-        <h2>Info Tambahan</h2>
-        <p><strong>Tanggal Lahir:</strong> 8 Oktober 2008</p>
-        <p><strong>Hobi:</strong> Mendengarkan musik, menyanyi, dan memasak.</p>
-        <p><strong>Alamat:</strong> Kp. Nusa RT 04 RW 14, Kel. Rancamanyar, Kec. Baleendah, Kab. Bandung.</p>
-    </section>
-
-    <div class="footer">
-        &copy; 2024 Rani Riyani. Dibuat dengan semangat.
-    </div>
 </div>
 
+<script>
+    // Fungsi untuk menampilkan foto setelah diupload
+    function previewImage(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            var output = document.getElementById('profile-img');
+            output.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+
 </body>
 </html>
-</body>
-</html>
+    
